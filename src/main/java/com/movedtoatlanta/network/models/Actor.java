@@ -5,14 +5,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
+/**
+ * A wrapper class that will aid in the mapping of JSON objects.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Actor implements Serializable {
+
     private Long id;
+
     private String login;
     @JsonProperty("display_login")
     private String displayLogin;
     @JsonProperty("gravatar_id")
     private String gravatarId;
+
     private String url;
     @JsonProperty("avatar_url")
     private String avatarUrl;

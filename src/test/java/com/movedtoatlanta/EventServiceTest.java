@@ -1,5 +1,6 @@
 package com.movedtoatlanta;
 
+import com.movedtoatlanta.network.GithubUrlCreator;
 import com.movedtoatlanta.network.RepositoryEventCommunicator;
 import com.movedtoatlanta.network.models.Event;
 import com.movedtoatlanta.queryapi.services.EventsServiceFacade;
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-import static org.mockito.Matchers.anyString;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 public class EventServiceTest {
@@ -26,7 +27,10 @@ public class EventServiceTest {
     private EventsServiceFacade eventsServiceFacade;
 
     @Mock
-    private RepositoryEventCommunicator communicator;
+    private RepositoryEventCommunicator repositoryEventCommunicator;
+
+    @Mock
+    private GithubUrlCreator githubUrlCreator;
 
     private String fileString;
 
@@ -44,7 +48,8 @@ public class EventServiceTest {
 
     @Test
     public void getEvents() {
-        when(communicator.communicate(anyString(), anyString())).thenReturn(fileString);
+        when(githubUrlCreator.getURI(any(String.class), any(String.class))).thenReturn("https://api.github.com/repos/meegs2369/github-query/events");
+        when(repositoryEventCommunicator.communicate(any(String.class))).thenReturn(fileString);
         List<Event> evtestEvents = eventsServiceFacade.getEvents("meegs2369", "service-point");
         Assert.assertEquals(14, evtestEvents.size());
     }

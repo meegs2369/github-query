@@ -6,10 +6,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+/**
+ * A wrapper class that will aid in the mapping of JSON objects.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable {
     private Long id;
+
     private String type;
+
     private Actor actor;
     @JsonProperty("created_at")
     private Timestamp timestamp;

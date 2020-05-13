@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <title>Github Repository Events Query </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+<div class="input-form">
+    <h1>Query Form</h1>
+    <div>Please put in the owner of the repository and the repository name.</div>
+    <div class="warning"><sup>*</sup>Only public repositories may be accessed at this time.</div>
+    <form action="#" th:action="@{/query}" th:object="${query}" method="post">
+        <p>Owner: <input type="text" th:field="*{owner}"/></p>
+        <p>Repository: <input type="text" th:field="*{repo}"/></p>
+        <div class="submit-container"><input class="submit" type="submit" value="Submit"/></div>
+    </form>
+</div>
+</body>
+</html>

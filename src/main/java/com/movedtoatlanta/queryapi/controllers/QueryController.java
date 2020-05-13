@@ -4,14 +4,15 @@ import com.movedtoatlanta.network.models.Event;
 import com.movedtoatlanta.queryapi.controllers.exceptions.NoRecordsFoundException;
 import com.movedtoatlanta.queryapi.services.EventsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * This class will process calls to the our api.
+ */
 @RestController
+@RequestMapping("api")
 public class QueryController {
 
     private final EventsService eventsService;
@@ -21,7 +22,15 @@ public class QueryController {
         this.eventsService = eventsService;
     }
 
-    @GetMapping("find/{user}/{repo}")
+    /**
+     * Method to call the service and present the results
+     *
+     * @param user String
+     * @param repo String
+     * @return List
+     * @throws NoRecordsFoundException upon failing to find any records.
+     */
+    @GetMapping("{user}/{repo}")
     @ResponseBody
     public List<Event> getEventDetails(@PathVariable String user, @PathVariable String repo) throws NoRecordsFoundException {
         List<Event> events = eventsService.getEvents(user, repo);

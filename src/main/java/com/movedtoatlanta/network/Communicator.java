@@ -1,5 +1,14 @@
 package com.movedtoatlanta.network;
 
+/**
+ * Classes implementing this will have take a String parameter and produce a String of a response.
+ */
 public interface Communicator {
-    String communicate(String user, String repo);
+    /**
+     * Method to produce the response
+     *
+     * @param endpoint String
+     * @return String
+     */
+    String communicate(String endpoint);
 }

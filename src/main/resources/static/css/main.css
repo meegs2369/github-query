@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: gray;
+}
+
+thead {
+    background-color: powderblue;
+}
+
+.warning {
+    font-size: small;
+    color: red;
+    background-color: slategray;
+    width: 25%;
+}
+
+.input-form {
+    margin-left: 20%;
+}
+
+.results {
+    margin: auto;
+}
+
+.results-header {
+    margin-left: 20%;
+}
+
+.nav-btn {
+    border: 1px solid black;
+    color: black;
+    background-color: lightgrey;
+    cursor: pointer;
+    margin: auto;
+    border-radius: 4px;
+    text-align: center;
+    width: 60px;
+}
+
+.nav-btn:hover {
+    background-color: grey;
+}
+
+.actions {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.nav-btn a:link {
+    text-decoration: none;
+}
+
+.nav-btn a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-btn a:hover {
+    text-decoration: none;
+}
+
+.nav-btn a:active {
+    text-decoration: none;
+}
+
+.submit {
+    cursor: pointer;
+    float: right;
+}
+
+.submit-container {
+    width: 30%;
+}
+
+.submit:hover {
+    background-color: grey;
+}
