@@ -1,6 +1,6 @@
 package com.movedtoatlanta;
 
-import com.movedtoatlanta.network.Communicator;
+import com.movedtoatlanta.network.RepositoryEventCommunicator;
 import com.movedtoatlanta.network.models.Event;
 import com.movedtoatlanta.queryapi.services.EventsServiceFacade;
 import org.apache.commons.io.FileUtils;
@@ -26,7 +26,7 @@ public class EventServiceTest {
     private EventsServiceFacade eventsServiceFacade;
 
     @Mock
-    private Communicator communicator;
+    private RepositoryEventCommunicator communicator;
 
     private String fileString;
 

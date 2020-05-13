@@ -27,8 +27,8 @@ public class RepositoryEventCommunicatorTest {
 
     @Test
     public void getResponse() {
-        when(githubUrlCreator.getURL(anyString(), anyString())).thenReturn("https://api.github.com/repos/meegs2369/service-point/events");
-        String response = repositoryEventCommunicator.communicate("meegs2369", "service-point");
+        when(githubUrlCreator.getURL(anyString(), anyString())).thenReturn("https://api.github.com/repos/meegs2369/github-query/events");
+        String response = repositoryEventCommunicator.communicate("meegs2369", "github-query");
         Assert.assertTrue(response.contains("id"));
     }
 }
