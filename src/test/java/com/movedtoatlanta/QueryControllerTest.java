@@ -42,7 +42,7 @@ public class QueryControllerTest {
 
     @Test
     public void getEvents() {
-        when(eventsService.getEvents(any(String.class), any(String.class)))
+        when(eventsService.getEvents(any(String.class), any(String.class), any(String.class)))
                 .thenReturn(new MockEvents().getGoodEventList());
         try {
             mockMvc.perform(get("/api/meegs2369/github-query"))
@@ -63,7 +63,7 @@ public class QueryControllerTest {
 
     @Test
     public void getNoEvents() {
-        when(eventsService.getEvents(any(String.class), any(String.class)))
+        when(eventsService.getEvents(any(String.class), any(String.class), any(String.class)))
                 .thenReturn(new ArrayList<>());
         try {
             mockMvc.perform(get("/api/meegs2369/github-query"))

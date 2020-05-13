@@ -13,7 +13,8 @@ public interface EventsService {
      *
      * @param user String
      * @param repo String
+     * @param type String
      * @return List
      */
-    List<Event> getEvents(String user, String repo);
+    List<Event> getEvents(String user, String repo, String type);
 }

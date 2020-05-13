@@ -11,8 +11,11 @@
     <div>Please put in the owner of the repository and the repository name.</div>
     <div class="warning"><sup>*</sup>Only public repositories may be accessed at this time.</div>
     <form action="#" th:action="@{/query}" th:object="${query}" method="post">
-        <p>Owner: <input type="text" th:field="*{owner}"/></p>
-        <p>Repository: <input type="text" th:field="*{repo}"/></p>
+        <label id="owner-label">Owner: <input type="text" th:field="*{owner}"/></label>
+        <label id="repo-label">Repository: <input type="text" th:field="*{repo}"/></label>
+        <label id="event-label">Event: <input type="text" th:field="*{type}"/><br><sup>Event types can be found <a
+                th:href="@{https://developer.github.com/v3/activity/events/types/}" th:target="_blank">here.</a></sup>
+        </label>
         <div class="submit-container"><input class="submit" type="submit" value="Submit"/></div>
     </form>
 </div>

@@ -30,10 +30,10 @@ public class QueryController {
      * @return List
      * @throws NoRecordsFoundException upon failing to find any records.
      */
-    @GetMapping("{user}/{repo}")
+    @GetMapping("{user}/{repo}/{type}")
     @ResponseBody
-    public List<Event> getEventDetails(@PathVariable String user, @PathVariable String repo) throws NoRecordsFoundException {
-        List<Event> events = eventsService.getEvents(user, repo);
+    public List<Event> getEventDetails(@PathVariable String user, @PathVariable String repo, @PathVariable String type) throws NoRecordsFoundException {
+        List<Event> events = eventsService.getEvents(user, repo, type);
         if (events.isEmpty()) {
             throw new NoRecordsFoundException("There were no events for the requested repository.", new NullPointerException());
         }

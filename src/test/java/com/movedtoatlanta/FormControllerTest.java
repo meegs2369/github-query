@@ -48,7 +48,7 @@ public class FormControllerTest {
     @Test
     public void getEvents() {
         try {
-            when(queryController.getEventDetails(any(String.class), any(String.class)))
+            when(queryController.getEventDetails(any(String.class), any(String.class), any(String.class)))
                     .thenReturn(new MockEvents().getGoodEventList());
             mockMvc.perform(post("/query"))
                    .andExpect(status().isOk());
@@ -60,7 +60,7 @@ public class FormControllerTest {
     @Test
     public void getNoEvents() {
         try {
-            when(queryController.getEventDetails(any(String.class), any(String.class)))
+            when(queryController.getEventDetails(any(String.class), any(String.class), any(String.class)))
                     .thenThrow(new NoRecordsFoundException("", new NullPointerException()));
             mockMvc.perform(post("/query"))
                    .andExpect(status().isOk());

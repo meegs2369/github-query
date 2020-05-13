@@ -47,7 +47,7 @@ public class FormController {
     @PostMapping("query")
     public String getResults(@ModelAttribute Query query, Model model) {
         try {
-            List<Event> events = queryController.getEventDetails(query.getOwner(), query.getRepo());
+            List<Event> events = queryController.getEventDetails(query.getOwner(), query.getRepo(), query.getType());
             model.addAttribute("events", events);
             return "queryResults";
         } catch (NoRecordsFoundException nre) {

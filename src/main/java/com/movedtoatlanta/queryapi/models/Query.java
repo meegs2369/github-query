@@ -6,6 +6,7 @@ package com.movedtoatlanta.queryapi.models;
 public class Query {
     private String owner;
     private String repo;
+    private String type;
 
     public String getOwner() {
         return owner;
@@ -21,5 +22,13 @@ public class Query {
 
     public void setRepo(String repo) {
         this.repo = repo;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

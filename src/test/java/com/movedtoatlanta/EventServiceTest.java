@@ -50,8 +50,8 @@ public class EventServiceTest {
     public void getEvents() {
         when(githubUrlCreator.getURI(any(String.class), any(String.class))).thenReturn("https://api.github.com/repos/meegs2369/github-query/events");
         when(repositoryEventCommunicator.communicate(any(String.class))).thenReturn(fileString);
-        List<Event> evtestEvents = eventsServiceFacade.getEvents("meegs2369", "service-point");
-        Assert.assertEquals(14, evtestEvents.size());
+        List<Event> evtestEvents = eventsServiceFacade.getEvents("meegs2369", "service-point", "PullRequestEvent");
+        Assert.assertEquals(4, evtestEvents.size());
     }
 
 }

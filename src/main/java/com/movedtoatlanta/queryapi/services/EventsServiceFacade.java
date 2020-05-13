@@ -30,10 +30,10 @@ public class EventsServiceFacade implements EventsService {
     }
 
     /* (non-Javadoc)
-     * @see com.movedtoatlanta.queryapi.services.EventsService#getEvents(java.lang.String user, java.lang.String repo)
+     * @see com.movedtoatlanta.queryapi.services.EventsService#getEvents(java.lang.String user, java.lang.String repo,  java.lang.String type)
      */
     @Override
-    public List<Event> getEvents(String user, String repo) {
+    public List<Event> getEvents(String user, String repo, String type) {
         List<Event> events = new ArrayList<>();
         String url = githubUrlCreator.getURI(user, repo);
         String stringResponse = repositoryEventCommunicator.communicate(url);
@@ -45,6 +45,7 @@ public class EventsServiceFacade implements EventsService {
                 LOGGER.error(io.getMessage());
             }
         }
+        events.removeIf(e -> !type.equals(e.getType()));
         return events;
     }
 }
