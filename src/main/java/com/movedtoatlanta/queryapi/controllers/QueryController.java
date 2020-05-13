@@ -26,7 +26,7 @@ public class QueryController {
     public List<Event> getEventDetails(@PathVariable String user, @PathVariable String repo) throws NoRecordsFoundException {
         List<Event> events = eventsService.getEvents(user, repo);
         if (events.isEmpty()) {
-            throw new NoRecordsFoundException("", new NullPointerException());
+            throw new NoRecordsFoundException("There were no events for the requested repository.", new NullPointerException());
         }
         return events;
     }
