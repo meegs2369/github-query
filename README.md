@@ -10,7 +10,7 @@ At this point there are two options to run the application :
 * Navigate to the target directory and type the command `java -jar github-query.jar`.
 
 Once this is done, you will see the application initialize. After the message `completed initialization in {value} ms`shows, the application 
-UI is accessible at `localhost:8093/query`. You can also make an api call to `localhost:8093/api/{user}/{repository}` if you are so inclined.
+UI is accessible at `localhost:8093/query`. You can also make an api call to `localhost:8093/api/{user}/{repository}/{type}` if you are so inclined.
 Should you need it, a shutdown endpoint is available; POST to `localhost:8080/manage/shutdown` using an api tool like
 [postman](https://www.postman.com) or via command line `curl "localhost:8080/manage/shutdown" -X POST`.
 
