@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * A wrapper class that will aid in the mapping of JSON objects.
+ * A class to map JSON events.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Event implements Serializable {

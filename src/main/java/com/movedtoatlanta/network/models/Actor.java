@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 
 /**
- * A wrapper class that will aid in the mapping of JSON objects.
+ * A class to map JSON actors.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Actor implements Serializable {
