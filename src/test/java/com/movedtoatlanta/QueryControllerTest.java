@@ -45,7 +45,7 @@ public class QueryControllerTest {
         when(eventsService.getEvents(any(String.class), any(String.class), any(String.class)))
                 .thenReturn(new MockEvents().getGoodEventList());
         try {
-            mockMvc.perform(get("/api/meegs2369/github-query"))
+            mockMvc.perform(get("/api/meegs2369/github-query/PullRequestEvent"))
                    .andExpect(status().isOk())
                    .andExpect(jsonPath("$[0].id", is(1234567)))
                    .andExpect(jsonPath("$[0].created_at", notNullValue()))
@@ -66,7 +66,7 @@ public class QueryControllerTest {
         when(eventsService.getEvents(any(String.class), any(String.class), any(String.class)))
                 .thenReturn(new ArrayList<>());
         try {
-            mockMvc.perform(get("/api/meegs2369/github-query"))
+            mockMvc.perform(get("/api/meegs2369/github-query/PullRequestEvent"))
                    .andExpect(status().isBadRequest())
                    .andExpect(jsonPath("$.errorMessage", is("There were no events for the requested repository.")));
         } catch (Exception e) {
