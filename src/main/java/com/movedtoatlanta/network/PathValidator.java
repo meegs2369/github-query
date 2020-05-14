@@ -3,7 +3,7 @@ package com.movedtoatlanta.network;
 import java.util.regex.Pattern;
 
 /**
- * Classes implementing this interface will have the ability to verify a path to only allow the paths that we want.
+ * Classes implementing this interface will have the ability to verify a path to only allow the desired path.
  */
 public interface PathValidator {
     /**

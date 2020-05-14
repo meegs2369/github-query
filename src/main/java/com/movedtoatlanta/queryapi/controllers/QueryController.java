@@ -27,6 +27,7 @@ public class QueryController {
      *
      * @param user String
      * @param repo String
+     * @param type String
      * @return List
      * @throws NoRecordsFoundException upon failing to find any records.
      */
