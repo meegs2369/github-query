@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <surefire-plugin.version>2.22.2</surefire-plugin.version>
         <sonar.sources>src/main/java,src/main/resources</sonar.sources>
         <sonar.projectKey>meegs2369_github-query</sonar.projectKey>
