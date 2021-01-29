@@ -39,7 +39,7 @@ public class EventsServiceFacade implements EventsService {
         String stringResponse = repositoryEventCommunicator.communicate(url);
         if (!stringResponse.isEmpty()) {
             try {
-                events = new ObjectMapper().readValue(stringResponse, new TypeReference<List<Event>>() {
+                events = new ObjectMapper().readValue(stringResponse, new TypeReference<>() {
                 });
             } catch (IOException io) {
                 LOGGER.error(io.getMessage());
