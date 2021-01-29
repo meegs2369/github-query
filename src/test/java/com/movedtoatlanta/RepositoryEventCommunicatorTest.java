@@ -10,7 +10,7 @@ public class RepositoryEventCommunicatorTest {
 
     @Test
     public void getResponse() {
-        String response = new RepositoryEventCommunicator().communicate("https://api.github.com/repos/meegs2369/github-query/events");
+        String response = new RepositoryEventCommunicator().communicate("https://api.github.com/repos/meegs2369/github-query");
         Assert.assertTrue(response.contains("id"));
     }
 }
